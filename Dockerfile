@@ -17,9 +17,3 @@ ADD requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
-
-# convert line endings to LF
-RUN apt update && apt install -y dos2unix && \
-    pushd src && find . -type f -print0 | xargs -0 dos2unix && popd && \
-    pushd egs && find . -type f -print0 | xargs -0 dos2unix && popd && \
-    pushd pretrained_models && find . -type f -print0 | xargs -0 dos2unix && popd
