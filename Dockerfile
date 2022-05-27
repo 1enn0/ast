@@ -10,7 +10,7 @@ RUN git clone --recursive https://github.com/pytorch/audio /opt/pytorch/audio &&
     git checkout v0.11.0
 ADD zlib-url.patch /opt/pytorch/audio/zlib-url.patch
 RUN cd /opt/pytorch/audio && \
-    git apply --ignore-space-change --ignore-whitespace zlib-url.patch && \
+    git apply zlib-url.patch && \
     python setup.py install
 
 ADD requirements.txt .
