@@ -15,5 +15,6 @@ RUN cd /opt/pytorch/audio && \
 
 ADD requirements.txt .
 RUN pip install -r requirements.txt
+RUN pip install magic-wormhole
 
 COPY . .
